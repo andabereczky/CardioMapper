@@ -17,6 +17,8 @@ namespace CardioMapper
 {
     public partial class App : Application
     {
+        public static Workout CurrentWorkout { get; set; }
+
         private static MainViewModel viewModel = null;
 
         /// <summary>

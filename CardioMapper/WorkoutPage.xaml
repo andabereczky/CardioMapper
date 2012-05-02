@@ -1,0 +1,85 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="CardioMapper.WorkoutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	xmlns:Microsoft_Phone_Controls_Maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="CARDIO MAPPER">
+
+            <!--Pivot item one-->
+            <controls:PivotItem Header="map">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0">
+                        <Microsoft_Phone_Controls_Maps:Map Height="480" Name="Map" CredentialsProvider="Apwnx64ApU1nxc3kDmM03fupSvk50NRqOpCsnXtJIuEtnCLQkUwg0tijlCP9KKK4" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1">
+                        <Button Name="StopButton" Content="Stop" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Click="StopButton_Click" />
+                    </StackPanel>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="diag">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0">
+                        <TextBlock Name="GPSStatus" Foreground="Red" Text="No GPS status" />
+
+                        <TextBlock Name="Location" Foreground="Red" Text="No location" />
+
+                        <TextBlock Name="Altitude" Foreground="Red" Text="No altitude" />
+
+                        <TextBlock Name="Timestamp" Foreground="Red" Text="No timestamp" />
+                        <TextBlock Name="CurrentTime" Foreground="Red" Text="No current time" />
+                        <TextBlock Name="Time" Foreground="Red" Text="No time" />
+                        <TextBlock Name="LastTime" Foreground="Red" Text="No last time" />
+
+                        <TextBlock Name="CurrentDistance" Foreground="Red" Text="No current distance" />
+                        <TextBlock Name="Distance" Foreground="Red" Text="No distance" />
+
+                        <TextBlock Name="MaxSpeed" Foreground="Red" Text="No max speed" />
+                        <TextBlock Name="Speed" Foreground="Red" Text="No speed" />
+                        <TextBlock Name="AverageSpeed" Foreground="Red" Text="No average speed" />
+                    </StackPanel>
+                </Grid>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+    
+</phone:PhoneApplicationPage>
